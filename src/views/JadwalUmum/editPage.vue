@@ -158,33 +158,52 @@ export default {
 
         //method update
         function update() {
-            let id_instruktur   = jadwal_umum.id_instruktur
-            let id_kelas = jadwal_umum.id_kelas
-            let hari   = jadwal_umum.hari
-            let jam_mulai = jadwal_umum.jam_mulai
-            let jam_selesai = jadwal_umum.jam_selesai
 
-            axios
-            .put(`https://arvell.valent.ppcdeveloper.com/api/jadwal_umum/${route.params.id_jadwal_umum}`, {
-                id_instruktur: id_instruktur,
-                id_kelas: id_kelas,
-                hari: hari,
-                jam_mulai: jam_mulai,
-                jam_selesai: jam_selesai,
-            }).then(() => {
-                //redirect ke instruktur index
-                router.push({
-                    name: 'jadwalumum.index'
+            Swal.fire({
+                title: 'Apa Anda Yakin?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+
+                let id_instruktur   = jadwal_umum.id_instruktur
+                let id_kelas = jadwal_umum.id_kelas
+                let hari   = jadwal_umum.hari
+                let jam_mulai = jadwal_umum.jam_mulai
+                let jam_selesai = jadwal_umum.jam_selesai
+
+                axios
+                .put(`https://arvell.valent.ppcdeveloper.com/api/jadwal_umum/${route.params.id_jadwal_umum}`, {
+                    id_instruktur: id_instruktur,
+                    id_kelas: id_kelas,
+                    hari: hari,
+                    jam_mulai: jam_mulai,
+                    jam_selesai: jam_selesai,
+                }).then(() => {
+                    //redirect ke instruktur index
+                    router.push({
+                        name: 'jadwalumum.index'
+                    })
+                }).catch(error => {
+                    //assign state validation with error 
+                    validation.value = error.response.data
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Instruktur Sudah Memiliki Jadwal!',
+                    })
                 })
-            }).catch(error => {
-                //assign state validation with error 
-                validation.value = error.response.data
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Instruktur Sudah Memiliki Jadwal!',
-                })
+
+                Swal.fire(
+                    'Terganti!',
+                    'success'
+                )
+            }
             })
+
         }
 
         //return
