@@ -84,6 +84,7 @@
 <script>
 import axios from "axios";
 import { onMounted, ref } from "vue";
+import Swal from 'sweetalert2'
 
 export default {
     setup() {
@@ -110,6 +111,11 @@ export default {
                 .post("https://arvell.valent.ppcdeveloper.com/api/izin_instruktur/konfirmasi/" +$id_izin, {
                 })
                 .then(() => {
+
+                    Swal.fire(
+                        'Berhasil Konfirmasi!',
+                        'success'
+                    )
                     //redirect ke post index
                     window.location.reload();
                 })
