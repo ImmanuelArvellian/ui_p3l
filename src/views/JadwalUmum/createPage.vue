@@ -94,6 +94,8 @@
 import { reactive, ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import Swal from 'sweetalert2'
+
 export default {
     setup() {
         //state instruktur
@@ -156,6 +158,10 @@ export default {
                     jam_selesai: jam_selesai,
                 })
                 .then(() => {
+                    Swal.fire(
+                        'Berhasil Generate!',
+                        'success'
+                    )
                     //redirect ke post index
                     router.push({
                         name: "jadwalumum.index",
