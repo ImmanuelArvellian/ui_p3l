@@ -108,7 +108,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://localhost:8000/api/deposit_kelas")
+                .get("http://arvell.valent.ppcdeveloper.com/api/deposit_kelas")
                 .then((response) => {
                     //assign state posts with response data
                     deposit_kelas.value = response.data.data;
@@ -128,7 +128,7 @@ export default {
             });
 
             axios
-            .get("http://localhost:8000/api/deposit_kelas")
+            .get("http://arvell.valent.ppcdeveloper.com/api/deposit_kelas")
                 .then((response) => {
                     //assign state posts with response data
                     deposit_kelas.value = response.data.data;
@@ -156,7 +156,7 @@ export default {
 
         function resetDeposit($id_deposit_kelas) {
             axios
-                .post("http://localhost:8000/api/deposit_kelas_reset/" + $id_deposit_kelas, {
+                .post("http://arvell.valent.ppcdeveloper.com/api/deposit_kelas_reset/" + $id_deposit_kelas, {
                     
                 })
                 .then(() => {

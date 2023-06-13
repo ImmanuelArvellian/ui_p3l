@@ -93,7 +93,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://localhost:8000/api/izin_instruktur")
+                .get("http://arvell.valent.ppcdeveloper.com/api/izin_instruktur")
                 .then((response) => {
                     //assign state posts with response data
                     izin_instruktur.value = response.data.data;
@@ -107,7 +107,7 @@ export default {
         //method delete
         function konfirmasi($id_izin) {
             axios
-                .post("http://localhost:8000/api/izin_instruktur/konfirmasi/" +$id_izin, {
+                .post("http://arvell.valent.ppcdeveloper.com/api/izin_instruktur/konfirmasi/" +$id_izin, {
                 })
                 .then(() => {
                     //redirect ke post index

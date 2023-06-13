@@ -10,7 +10,7 @@
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">GoFit Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">GoFit Menu - {{ nama_user }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -88,12 +88,12 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://192.168.16.240:8000/api/pegawai/" + localStorage.getItem("Id_User")
+                .get("http://arvell.valent.ppcdeveloper.com/api/pegawai/" + localStorage.getItem("Id_User")
                 )
                 .then((response) => {
                     //assign state posts with response data
                     pegawai.value = response.data.data;
-                    nama_user = pegawai.value["nama_pegawai"];
+                    nama_user = localStorage.getItem("Id_User");
                     localStorage.setItem('Nama_user', nama_user);
                     console.log(nama_user);
                 })

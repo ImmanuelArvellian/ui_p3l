@@ -96,7 +96,7 @@ export default {
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
-            axios.get(`http://localhost:8000/api/instruktur/${route.params.id_instruktur}`,)
+            axios.get(`http://arvell.valent.ppcdeveloper.com/api/instruktur/${route.params.id_instruktur}`,)
             .then(response => {
               
               //assign state instrukturs with response data
@@ -122,7 +122,7 @@ export default {
             let alamat = instruktur.alamat
 
             axios
-            .put(`http://localhost:8000/api/instruktur/${route.params.id_instruktur}`, {
+            .put(`http://arvell.valent.ppcdeveloper.com/api/instruktur/${route.params.id_instruktur}`, {
                 nama: nama,
                 email: email,
                 password: password,

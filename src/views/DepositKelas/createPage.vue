@@ -97,7 +97,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://localhost:8000/api/member")
+                .get("http://arvell.valent.ppcdeveloper.com/api/member")
                 .then((response) => {
                     //assign state posts with response data
                     member.value = response.data.data;
@@ -108,7 +108,7 @@ export default {
                 });
             
             axios
-                .get("http://localhost:8000/api/pegawai")
+                .get("http://arvell.valent.ppcdeveloper.com/api/pegawai")
                 .then((response) => {
                     //assign state posts with response data
                     pegawai.value = response.data.data;
@@ -119,7 +119,7 @@ export default {
                 });
 
             axios
-                .get("http://localhost:8000/api/kelas")
+                .get("http://arvell.valent.ppcdeveloper.com/api/kelas")
                 .then((response) => {
                     //assign state posts with response data
                     kelas.value = response.data.data;
@@ -138,7 +138,7 @@ export default {
             let sisa_deposit_kelas = deposit_kelas.sisa_deposit_kelas;
 
             axios
-                .post("http://localhost:8000/api/deposit_kelas", {
+                .post("http://arvell.valent.ppcdeveloper.com/api/deposit_kelas", {
                     id_member: id_member,
                     id_pegawai: id_pegawai,
                     id_kelas: id_kelas,

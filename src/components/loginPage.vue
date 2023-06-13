@@ -53,7 +53,7 @@ export default {
             let password = loginData.password;
 
             axios
-                .post("http://localhost:8000/api/login", {
+                .post("http://arvell.valent.ppcdeveloper.com/api/login", {
                     email: email,
                     password: password
                 })

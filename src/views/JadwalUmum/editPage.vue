@@ -120,7 +120,7 @@ export default {
         //mounted
         onMounted(() => {
             axios
-                .get("http://localhost:8000/api/instruktur")
+                .get("http://arvell.valent.ppcdeveloper.com/api/instruktur")
                 .then((response) => {
                     //assign state posts with response data
                     instruktur.value = response.data.data;
@@ -130,7 +130,7 @@ export default {
                 });
             
             axios
-                .get("http://localhost:8000/api/kelas")
+                .get("http://arvell.valent.ppcdeveloper.com/api/kelas")
                 .then((response) => {
                     //assign state posts with response data
                     kelas.value = response.data.data;
@@ -140,7 +140,7 @@ export default {
                 });
 
             //get API from Laravel Backend
-            axios.get(`http://localhost:8000/api/jadwal_umum/${route.params.id_jadwal_umum}`,)
+            axios.get(`http://arvell.valent.ppcdeveloper.com/api/jadwal_umum/${route.params.id_jadwal_umum}`,)
             .then(response => {
               
               //assign state instrukturs with response data
@@ -164,7 +164,7 @@ export default {
             let jam_selesai = jadwal_umum.jam_selesai
 
             axios
-            .put(`http://localhost:8000/api/jadwal_umum/${route.params.id_jadwal_umum}`, {
+            .put(`http://arvell.valent.ppcdeveloper.com/api/jadwal_umum/${route.params.id_jadwal_umum}`, {
                 id_instruktur: id_instruktur,
                 id_kelas: id_kelas,
                 hari: hari,

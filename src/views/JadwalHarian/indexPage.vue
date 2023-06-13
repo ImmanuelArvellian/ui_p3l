@@ -207,7 +207,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://localhost:8000/api/jadwal_harian")
+                .get("http://arvell.valent.ppcdeveloper.com/api/jadwal_harian")
                 .then((response) => {
                     //assign state posts with response data
                     jadwal_harian.value = response.data.data;
@@ -219,7 +219,7 @@ export default {
 
         function generate() {
             axios
-                .post("http://localhost:8000/api/jadwal_harian", {
+                .post("http://arvell.valent.ppcdeveloper.com/api/jadwal_harian", {
                    
                 })
                 .then(() => {
@@ -230,7 +230,7 @@ export default {
 
         function ubahStatus($id_jadwal_harian) {
             axios
-                .put("http://localhost:8000/api/jadwal_harian/ubahStatus/" +$id_jadwal_harian, {
+                .put("http://arvell.valent.ppcdeveloper.com/api/jadwal_harian/ubahStatus/" +$id_jadwal_harian, {
                     status: 'Libur'
                 })
                 .then(() => {
@@ -242,7 +242,7 @@ export default {
         //method delete
         function jadwal_harianDelete(id_jadwal_harian) {
             //delete data post by ID
-            axios.delete(`http://localhost:8000/api/jadwal_harian/${id_jadwal_harian}`)
+            axios.delete(`http://arvell.valent.ppcdeveloper.com/api/jadwal_harian/${id_jadwal_harian}`)
             .then(() => {
               //splice posts 
               jadwal_harian.value.splice(jadwal_harian.value.indexOf(id_jadwal_harian), 1);

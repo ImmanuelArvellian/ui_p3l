@@ -54,7 +54,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://localhost:8000/api/laporan_gym")
+                .get("http://arvell.valent.ppcdeveloper.com/api/laporan_gym")
                 .then((response) => {
                     //assign state posts with response data
                     laporan_gym.value = response.data.data;

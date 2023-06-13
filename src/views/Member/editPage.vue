@@ -142,7 +142,7 @@ export default {
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
-            axios.get(`http://localhost:8000/api/member/${route.params.id_member}`,)
+            axios.get(`http://arvell.valent.ppcdeveloper.com/api/member/${route.params.id_member}`,)
             .then(response => {
               
               //assign state members with response data
@@ -178,7 +178,7 @@ export default {
             let sisa_deposit = member.sisa_deposit
 
             axios
-            .put(`http://localhost:8000/api/member/${route.params.id_member}`, {
+            .put(`http://arvell.valent.ppcdeveloper.com/api/member/${route.params.id_member}`, {
                 nama: nama,
                 tgl_lahir: tgl_lahir,
                 email: email,
