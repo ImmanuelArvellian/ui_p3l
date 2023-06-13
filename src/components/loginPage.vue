@@ -37,6 +37,7 @@
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 export default {
     setup() {
@@ -62,6 +63,23 @@ export default {
                     let role = response.data.role.nama_role;
                     localStorage.setItem('Role', role);
                     localStorage.setItem('Id_User', response.data.data.id_pegawai)
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Login Berhasil'
+                    })
 
                     router.push({
                         name: "beranda",
