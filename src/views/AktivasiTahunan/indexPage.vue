@@ -75,7 +75,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/aktivasi_tahunan")
+                .get("https://arvell.valent.ppcdeveloper.com/api/aktivasi_tahunan")
                 .then((response) => {
                     //assign state posts with response data
                     aktivasi_tahunan.value = response.data.data;
@@ -95,7 +95,7 @@ export default {
             });
 
             axios
-            .get("http://arvell.valent.ppcdeveloper.com/api/aktivasi_tahunan")
+            .get("https://arvell.valent.ppcdeveloper.com/api/aktivasi_tahunan")
                 .then((response) => {
                     //assign state posts with response data
                     aktivasi_tahunan.value = response.data.data;

@@ -108,7 +108,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/instruktur")
+                .get("https://arvell.valent.ppcdeveloper.com/api/instruktur")
                 .then((response) => {
                     //assign state posts with response data
                     instruktur.value = response.data.data;
@@ -121,7 +121,7 @@ export default {
         //method delete
         function instrukturDelete(id_instruktur) {
             //delete data post by ID
-            axios.delete(`http://arvell.valent.ppcdeveloper.com/api/instruktur/${id_instruktur}`)
+            axios.delete(`https://arvell.valent.ppcdeveloper.com/api/instruktur/${id_instruktur}`)
             .then(() => {
               //splice posts 
               instruktur.value.splice(instruktur.value.indexOf(id_instruktur), 1);
@@ -133,7 +133,7 @@ export default {
 
         function resetTerlambat($id_instruktur){
             axios
-                .post("http://arvell.valent.ppcdeveloper.com/api/instruktur_reset/" + $id_instruktur, {
+                .post("https://arvell.valent.ppcdeveloper.com/api/instruktur_reset/" + $id_instruktur, {
                     
                 })
                 .then(() => {

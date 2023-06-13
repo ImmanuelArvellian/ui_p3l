@@ -150,7 +150,7 @@ export default {
             let tgl_exp_membership = member.tgl_exp_membership;
             let sisa_deposit = member.sisa_deposit;
             axios
-                .post("http://arvell.valent.ppcdeveloper.com/api/member", {
+                .post("https://arvell.valent.ppcdeveloper.com/api/member", {
                     nama: nama,
                     tgl_lahir: tgl_lahir,
                     email: email,

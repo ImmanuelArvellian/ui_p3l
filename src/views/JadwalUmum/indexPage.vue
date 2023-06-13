@@ -153,7 +153,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/jadwal_umum")
+                .get("https://arvell.valent.ppcdeveloper.com/api/jadwal_umum")
                 .then((response) => {
                     //assign state posts with response data
                     jadwal_umum.value = response.data.data;
@@ -166,7 +166,7 @@ export default {
         //method delete
         function jadwal_umumDelete(id_jadwal_umum) {
             //delete data post by ID
-            axios.delete(`http://arvell.valent.ppcdeveloper.com/api/jadwal_umum/${id_jadwal_umum}`)
+            axios.delete(`https://arvell.valent.ppcdeveloper.com/api/jadwal_umum/${id_jadwal_umum}`)
             .then(() => {
               //splice posts 
               jadwal_umum.value.splice(jadwal_umum.value.indexOf(id_jadwal_umum), 1);

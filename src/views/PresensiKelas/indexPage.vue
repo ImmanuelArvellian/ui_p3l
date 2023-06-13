@@ -94,7 +94,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/booking_kelas_sudah")
+                .get("https://arvell.valent.ppcdeveloper.com/api/booking_kelas_sudah")
                 .then((response) => {
                     //assign state posts with response data
                     booking_kelas.value = response.data.data;

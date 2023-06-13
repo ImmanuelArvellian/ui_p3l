@@ -82,7 +82,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/booking_gym_belum")
+                .get("https://arvell.valent.ppcdeveloper.com/api/booking_gym_belum")
                 .then((response) => {
                     //assign state posts with response data
                     booking_gym.value = response.data.data;
@@ -94,7 +94,7 @@ export default {
 
         function presensi($id_booking_gym) {
             axios
-                .post("http://arvell.valent.ppcdeveloper.com/api/booking_gym_presensi/" +$id_booking_gym, {
+                .post("https://arvell.valent.ppcdeveloper.com/api/booking_gym_presensi/" +$id_booking_gym, {
 
                 })
                 .then(() => {

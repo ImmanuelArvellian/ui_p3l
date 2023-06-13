@@ -124,7 +124,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/member_exp/")
+                .get("https://arvell.valent.ppcdeveloper.com/api/member_exp/")
                 .then((response) => {
                     //assign state posts with response data
                     member.value = response.data.data;
@@ -137,7 +137,7 @@ export default {
         //method delete
         function memberDelete(id_member) {
             //delete data post by ID
-            axios.delete(`http://arvell.valent.ppcdeveloper.com/api/member/${id_member}`)
+            axios.delete(`https://arvell.valent.ppcdeveloper.com/api/member/${id_member}`)
             .then(() => {
               //splice posts 
               member.value.splice(member.value.indexOf(id_member), 1);
@@ -157,7 +157,7 @@ export default {
         //     });
 
         //     axios
-        //     .get("http://arvell.valent.ppcdeveloper.com/api/member")
+        //     .get("https://arvell.valent.ppcdeveloper.com/api/member")
         //         .then((response) => {
         //             //assign state posts with response data
         //             member.value = response.data.data;

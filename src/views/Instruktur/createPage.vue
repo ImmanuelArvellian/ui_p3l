@@ -104,7 +104,7 @@ export default {
             let no_telp = instruktur.no_telp;
             let alamat = instruktur.alamat;
             axios
-                .post("http://arvell.valent.ppcdeveloper.com/api/instruktur", {
+                .post("https://arvell.valent.ppcdeveloper.com/api/instruktur", {
                     nama: nama,
                     email: email,
                     password: password,

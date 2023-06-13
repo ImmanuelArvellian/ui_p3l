@@ -90,7 +90,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/deposit_umum")
+                .get("https://arvell.valent.ppcdeveloper.com/api/deposit_umum")
                 .then((response) => {
                     //assign state posts with response data
                     deposit_umum.value = response.data.data;
@@ -110,7 +110,7 @@ export default {
             });
 
             axios
-            .get("http://arvell.valent.ppcdeveloper.com/api/deposit_umum")
+            .get("https://arvell.valent.ppcdeveloper.com/api/deposit_umum")
                 .then((response) => {
                     //assign state posts with response data
                     deposit_umum.value = response.data.data;

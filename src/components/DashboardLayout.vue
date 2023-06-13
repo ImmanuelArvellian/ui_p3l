@@ -88,7 +88,7 @@ export default {
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://arvell.valent.ppcdeveloper.com/api/pegawai/" + localStorage.getItem("Id_User")
+                .get("https://arvell.valent.ppcdeveloper.com/api/pegawai/" + localStorage.getItem("Id_User")
                 )
                 .then((response) => {
                     //assign state posts with response data
