@@ -95,6 +95,7 @@
 import { reactive, ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export default {
     setup() {
@@ -178,6 +179,11 @@ export default {
             }).catch(error => {
                 //assign state validation with error 
                 validation.value = error.response.data
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Instruktur Sudah Memiliki Jadwal!',
+                })
             })
         }
 
